@@ -40,7 +40,14 @@ const projects = [
     category: "Обшивка и реставрация",
     location: "Коттедж, Новая Рига",
     year: "2024",
-    image: "/images/hously-2.png",
+    image: "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/9c2b06f8-d32b-44a7-8f10-c3facf7f5c81.jpg",
+    images: [
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/9c2b06f8-d32b-44a7-8f10-c3facf7f5c81.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/57e76f8b-077e-4b2e-a160-26f7dc4b20b6.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/a0148b1b-68bd-4ad4-bd62-698abe2bc7bc.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/a079e646-0915-40fb-9fec-0b225f78183c.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/199616c4-3825-4887-bef7-3f05e25aaa0d.jpg",
+    ],
   },
   {
     id: 3,
