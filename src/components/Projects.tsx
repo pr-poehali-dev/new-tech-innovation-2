@@ -60,7 +60,14 @@ const projects = [
     category: "Металл, дерево, стекло",
     location: "Таунхаус, Сочи",
     year: "2024",
-    image: "/images/hously-3.png",
+    image: "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/6b9e076b-8bed-419e-9b9d-f298cc2b90db.jpg",
+    images: [
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/6b9e076b-8bed-419e-9b9d-f298cc2b90db.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/7484a9a6-9224-4e23-8582-95223c236781.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/9c1185bc-d636-46c6-a1e2-6342de3bbb77.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/74f3cb14-e251-435b-afcb-692520c55550.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/0e2c9984-e7f8-4bb7-9524-71f079f52617.jpg",
+    ],
   },
   {
     id: 4,
