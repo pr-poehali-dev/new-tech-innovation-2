@@ -77,7 +77,14 @@ const projects = [
     category: "Металлоконструкции",
     location: "Загородный дом, Казань",
     year: "2024",
-    image: "/images/hously-4.png",
+    image: "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/18c7e9fe-a01c-4d46-9ac2-d4bbbac8b6fd.jpg",
+    images: [
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/18c7e9fe-a01c-4d46-9ac2-d4bbbac8b6fd.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/14038ed9-da9e-42fb-8fe8-ea2780ea421b.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/7fed5d14-7cc8-45a0-b7cc-00ce746fa2f4.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/f8982dbd-f920-4456-b9c5-4be055a451a8.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/3c52c590-5bfa-4478-8d30-704d421d794d.jpg",
+    ],
   },
 ]
 
