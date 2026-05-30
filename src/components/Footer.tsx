@@ -66,6 +66,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-muted-foreground">
           <p>© 2025 39 ступеней. Все права защищены.</p>
+          <p className="text-xs text-muted-foreground/60">ИП Харченко Валентина Викторовна · ИНН: 390504394550 · ОГРНИП: 318392600027278</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-foreground transition-colors">
               Политика конфиденциальности
