@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "Дубовая маршевая",
+    title: "Лестницы на монокосоуре",
     category: "Изготовление под ключ",
     location: "Частный дом, Подмосковье",
     year: "2024",
@@ -12,7 +12,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Обшивка бетонной лестницы",
+    title: "Обшивка бетонных лестниц",
     category: "Обшивка и реставрация",
     location: "Коттедж, Новая Рига",
     year: "2024",
@@ -20,16 +20,16 @@ const projects = [
   },
   {
     id: 3,
-    title: "Винтовая лестница",
-    category: "Металл + дерево",
+    title: "Перила и ограждения",
+    category: "Металл, дерево, стекло",
     location: "Таунхаус, Сочи",
-    year: "2023",
+    year: "2024",
     image: "/images/hously-3.png",
   },
   {
     id: 4,
-    title: "Перила со стеклом",
-    category: "Ограждения",
+    title: "Металлокаркас лестниц",
+    category: "Металлоконструкции",
     location: "Загородный дом, Казань",
     year: "2024",
     image: "/images/hously-4.png",
