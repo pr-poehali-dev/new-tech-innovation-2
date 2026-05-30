@@ -61,7 +61,7 @@ export function Footer() {
               </li>
               <li>
                 <a href="https://vk.com/away.php?to=https%3A%2F%2Fwww.avito.ru%2Fuser%2F0aab524ff4243ab26e8781f41d2cf9d4%2Fprofile%3Fsrc%3Dsharing&utf=1" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-                  Авито
+                  Мы на Авито
                 </a>
               </li>
             </ul>
