@@ -6,7 +6,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="/" className="inline-block mb-6">
-              <img src="/images/hously-logo.svg" alt="39 ступеней" width={120} height={32} className="w-auto h-6" />
+              <span className="text-foreground font-semibold text-lg tracking-tight">39 ступеней</span>
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
               Изготовление и обшивка лестниц под ключ. Работаем с деревом, металлом и стеклом. Бесплатный выезд замерщика.
