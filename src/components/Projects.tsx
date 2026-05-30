@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 const projects = [
   {
@@ -8,7 +8,13 @@ const projects = [
     category: "Изготовление под ключ",
     location: "Частный дом, Подмосковье",
     year: "2024",
-    image: "/images/hously-1.png",
+    image: "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/b5737759-ee01-479b-8652-66ce92ff6e64.jpg",
+    images: [
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/b5737759-ee01-479b-8652-66ce92ff6e64.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/816093eb-3505-403b-980e-ffff60d4f24d.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/1c1c901c-2026-4227-b0d5-28b2707bfc7b.jpg",
+      "https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/6f0a2ac3-650c-48a6-82ee-a0a298efc414.jpg",
+    ],
   },
   {
     id: 2,
@@ -39,7 +45,20 @@ const projects = [
 export function Projects() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
   const [revealedImages, setRevealedImages] = useState<Set<number>>(new Set())
+  const [slideIndexes, setSlideIndexes] = useState<Record<number, number>>({})
   const imageRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  const getSlideIndex = (id: number) => slideIndexes[id] ?? 0
+
+  const prevSlide = (e: React.MouseEvent, id: number, total: number) => {
+    e.stopPropagation()
+    setSlideIndexes((prev) => ({ ...prev, [id]: (getSlideIndex(id) - 1 + total) % total }))
+  }
+
+  const nextSlide = (e: React.MouseEvent, id: number, total: number) => {
+    e.stopPropagation()
+    setSlideIndexes((prev) => ({ ...prev, [id]: (getSlideIndex(id) + 1) % total }))
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -89,13 +108,51 @@ export function Projects() {
               onMouseLeave={() => setHoveredId(null)}
             >
               <div ref={(el) => (imageRefs.current[index] = el)} className="relative overflow-hidden aspect-[4/3] mb-6">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className={`w-full h-full object-cover transition-transform duration-700 ${
-                    hoveredId === project.id ? "scale-105" : "scale-100"
-                  }`}
-                />
+                {"images" in project && project.images ? (
+                  <>
+                    <img
+                      src={project.images[getSlideIndex(project.id)]}
+                      alt={project.title}
+                      className={`w-full h-full object-cover transition-transform duration-700 ${
+                        hoveredId === project.id ? "scale-105" : "scale-100"
+                      }`}
+                    />
+                    {project.images.length > 1 && hoveredId === project.id && (
+                      <>
+                        <button
+                          onClick={(e) => prevSlide(e, project.id, project.images!.length)}
+                          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full p-1.5 transition-colors"
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                        </button>
+                        <button
+                          onClick={(e) => nextSlide(e, project.id, project.images!.length)}
+                          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full p-1.5 transition-colors"
+                        >
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                          {project.images.map((_, i) => (
+                            <span
+                              key={i}
+                              className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                                i === getSlideIndex(project.id) ? "bg-white" : "bg-white/40"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </>
+                ) : (
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    className={`w-full h-full object-cover transition-transform duration-700 ${
+                      hoveredId === project.id ? "scale-105" : "scale-100"
+                    }`}
+                  />
+                )}
                 <div
                   className="absolute inset-0 bg-primary origin-top"
                   style={{
