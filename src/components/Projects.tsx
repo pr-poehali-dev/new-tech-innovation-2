@@ -203,10 +203,7 @@ export function Projects() {
 
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-medium mb-2 group-hover:underline underline-offset-4">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm">
-                    {project.category} · {project.location}
-                  </p>
+                  <h3 className="text-xl font-medium group-hover:underline underline-offset-4">{project.title}</h3>
                 </div>
                 <span className="text-muted-foreground/60 text-sm">{project.year}</span>
               </div>
