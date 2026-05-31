@@ -32,6 +32,14 @@ export function CallToAction() {
             >
               Написать нам
             </a>
+            <a
+              href="https://vk.com/away.php?to=https%3A%2F%2Fwww.avito.ru%2Fuser%2F0aab524ff4243ab26e8781f41d2cf9d4%2Fprofile%3Fsrc%3Dsharing&utf=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 px-8 py-4 text-sm tracking-wide hover:bg-primary-foreground/10 transition-colors duration-300"
+            >
+              Перейти на наш профиль Авито
+            </a>
           </div>
         </div>
       </div>
