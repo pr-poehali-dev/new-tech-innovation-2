@@ -93,6 +93,7 @@ export function Projects() {
   const [revealedImages, setRevealedImages] = useState<Set<number>>(new Set())
   const [slideIndexes, setSlideIndexes] = useState<Record<number, number>>({})
   const imageRefs = useRef<(HTMLDivElement | null)[]>([])
+  const touchStartX = useRef<Record<number, number>>({})
 
   const getSlideIndex = (id: number) => slideIndexes[id] ?? 0
 
@@ -104,6 +105,22 @@ export function Projects() {
   const nextSlide = (e: React.MouseEvent, id: number, total: number) => {
     e.stopPropagation()
     setSlideIndexes((prev) => ({ ...prev, [id]: (getSlideIndex(id) + 1) % total }))
+  }
+
+  const handleTouchStart = (id: number, e: React.TouchEvent) => {
+    touchStartX.current[id] = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (id: number, total: number, e: React.TouchEvent) => {
+    const startX = touchStartX.current[id]
+    if (startX === undefined) return
+    const diff = startX - e.changedTouches[0].clientX
+    if (Math.abs(diff) < 30) return
+    if (diff > 0) {
+      setSlideIndexes((prev) => ({ ...prev, [id]: (getSlideIndex(id) + 1) % total }))
+    } else {
+      setSlideIndexes((prev) => ({ ...prev, [id]: (getSlideIndex(id) - 1 + total) % total }))
+    }
   }
 
   useEffect(() => {
@@ -143,7 +160,12 @@ export function Projects() {
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <div ref={(el) => (imageRefs.current[index] = el)} className="relative overflow-hidden aspect-[4/3] mb-6">
+              <div
+                ref={(el) => (imageRefs.current[index] = el)}
+                className="relative overflow-hidden aspect-[4/3] mb-6"
+                onTouchStart={(e) => handleTouchStart(project.id, e)}
+                onTouchEnd={(e) => handleTouchEnd(project.id, project.images?.length ?? 1, e)}
+              >
                 {"images" in project && project.images ? (
                   <>
                     <img
