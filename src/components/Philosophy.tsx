@@ -64,7 +64,7 @@ export function Philosophy() {
               <HighlightedText>характером</HighlightedText>
             </h2>
 
-            <div className="relative hidden lg:block">
+            <div className="relative block">
               <img
                 src="https://cdn.poehali.dev/projects/a06219ab-2743-4e38-9c69-70502bc6e8e7/bucket/bbfbb3c3-1ea1-4fcd-83d5-b350b2f372e4.jpg"
                 alt="Лестница с характером"
