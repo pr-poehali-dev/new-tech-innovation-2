@@ -153,29 +153,32 @@ export function Projects() {
                         hoveredId === project.id ? "scale-105" : "scale-100"
                       }`}
                     />
-                    {project.images.length > 1 && hoveredId === project.id && (
+                    {project.images.length > 1 && (
                       <>
                         <button
                           onClick={(e) => prevSlide(e, project.id, project.images!.length)}
-                          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full p-1.5 transition-colors"
+                          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors shadow-md"
                         >
-                          <ChevronLeft className="w-4 h-4" />
+                          <ChevronLeft className="w-5 h-5" />
                         </button>
                         <button
                           onClick={(e) => nextSlide(e, project.id, project.images!.length)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full p-1.5 transition-colors"
+                          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors shadow-md"
                         >
-                          <ChevronRight className="w-4 h-4" />
+                          <ChevronRight className="w-5 h-5" />
                         </button>
-                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                           {project.images.map((_, i) => (
                             <span
                               key={i}
-                              className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                                i === getSlideIndex(project.id) ? "bg-white" : "bg-white/40"
+                              className={`rounded-full transition-all duration-300 ${
+                                i === getSlideIndex(project.id) ? "bg-white w-4 h-2" : "bg-white/50 w-2 h-2"
                               }`}
                             />
                           ))}
+                        </div>
+                        <div className="absolute top-3 right-3 z-10 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                          {getSlideIndex(project.id) + 1} / {project.images.length}
                         </div>
                       </>
                     )}
