@@ -9,7 +9,7 @@ export function Footer() {
               <span className="text-foreground font-semibold text-lg tracking-tight">39 ступеней</span>
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
-              Изготовление и обшивка лестниц под ключ. Работаем с деревом, металлом и стеклом. Бесплатный выезд замерщика.
+              Изготовление и обшивка лестниц под ключ. Работаем с деревом и металлом. Бесплатный выезд замерщика.
             </p>
           </div>
 
